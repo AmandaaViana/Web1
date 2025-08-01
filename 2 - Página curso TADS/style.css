@@ -1,0 +1,71 @@
+body{ 
+    background-color: #CCCCCC;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.container{
+    background-color: white;
+    padding: 0px;
+    margin-top: 20px;
+}
+div.head{ /*cabeçalho*/
+    background: #9AF6B1;
+    text-align: center;
+    margin: 20px #9AF6B1;
+    padding: 2px;
+}
+.menu{
+    border: 1px solid #7EE091;
+    background: #8AEA9F;
+}
+main{ /*todo o texto do corpo tirando o cabeçalho*/
+    margin: 20px;
+    padding: 2px;
+}
+h1{
+    font-size: 35px;
+    color: #080400;
+}
+.linha{
+    color: #0F1D83;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    font-size: 20px;
+}
+h2{
+    font-size: 30px;
+    color: #037253;
+}
+h3{
+    font-size: 25px;
+    color: #655A53;
+}
+p{
+    text-align: justify;
+    font-size: 20px;
+    text-indent: 30px;
+}
+li{
+    font-size: 20px;
+}
+/*tabela semestre*/
+.table-container {
+    display: flex;
+    gap: 30px;
+    margin: 2px;
+}
+.semestre td{
+    padding: 10px 15px;
+    border: 1px solid #7E8C9B;
+}
+td{
+    padding: 4px;
+    border: 1px solid black;
+    border-collapse: collapse; 
+  }
+.web{
+    background: #9AF6B1;
+}
