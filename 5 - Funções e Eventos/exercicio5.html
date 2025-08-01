@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exercicio 4 - Cálculo Itens Separados</title>
+    <style>
+        .resultado {
+            background-color: lightgreen;
+            margin-top: 10px;
+            padding: 10px;
+            display: inline-block;
+            min-width: 120px;
+            box-sizing: border-box;
+            font-weight: 600;
+            text-align: center;
+            margin-left: 10px;
+        }
+
+        .input-container {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .item-row {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        label {
+            min-width: 80px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            min-width: 100px;
+        }
+
+        button {
+            padding: 8px 18px;
+            cursor: pointer;
+            border: none;
+
+            transition: background-color 0.3s ease;
+            flex-shrink: 0;
+        }
+        .total-container {
+            margin-top: 30px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <h1>Orçamento</h1>
+
+        <div class="item-row" id="item-row-1">
+            <div class="input-container">
+                <label for="item1">Item 1:</label>
+                <input type="text" id="item1" />
+            </div>
+            <div class="input-container">
+                <label for="valor1">Valor:</label>
+                <input type="number" id="valor1" step="0.01" min="0" />
+            </div>
+            <div class="input-container">
+                <label for="quantidade1">Quantidade:</label>
+                <input type="number" id="quantidade1" min="1" />
+            </div>
+            <button onclick="calcularItem(1)">=</button>
+            <div class="resultado" id="resultadoItem1">Total: R$ 0.00</div>
+        </div>
+
+        <div class="item-row" id="item-row-2">
+            <div class="input-container">
+                <label for="item2">Item 2:</label>
+                <input type="text" id="item2" />
+            </div>
+            <div class="input-container">
+                <label for="valor2">Valor:</label>
+                <input type="number" id="valor2" step="0.01" min="0" />
+            </div>
+            <div class="input-container">
+                <label for="quantidade2">Quantidade:</label>
+                <input type="number" id="quantidade2" min="1" />
+            </div>
+            <button onclick="calcularItem(2)">=</button>
+            <div class="resultado" id="resultadoItem2">Total: R$ 0.00</div>
+        </div>
+
+        <div class="item-row" id="item-row-3">
+            <div class="input-container">
+                <label for="item3">Item 3:</label>
+                <input type="text" id="item3" />
+            </div>
+            <div class="input-container">
+                <label for="valor3">Valor:</label>
+                <input type="number" id="valor3" step="0.01" min="0" />
+            </div>
+            <div class="input-container">
+                <label for="quantidade3">Quantidade:</label>
+                <input type="number" id="quantidade3" min="1" />
+            </div>
+            <button onclick="calcularItem(3)">=</button>
+            <div class="resultado" id="resultadoItem3">Total: R$ 0.00</div>
+        </div>
+
+        <button style="margin-top:20px;" onclick="calcularTotalGeral()">Calcular Total Geral</button>
+
+        <div class="total-container" id="resultadoTotal">
+            Total Total: R$ 0.00
+        </div>
+    </div>
+
+    <script>
+        const totaisPorItem = [0, 0, 0];
+
+        function calcularItem(index) {
+            const valorElem = document.getElementById(`valor${index}`);
+            const quantidadeElem = document.getElementById(`quantidade${index}`);
+            const resultadoElem = document.getElementById(`resultadoItem${index}`);
+
+            const valor = parseFloat(valorElem.value);
+            const quantidade = parseInt(quantidadeElem.value);
+
+            if (isNaN(valor) || isNaN(quantidade)) {
+                resultadoElem.textContent = 'Preencha valor e quantidade corretamente';
+                totaisPorItem[index - 1] = 0;
+                atualizarTotalGeral();
+                return;
+            }
+            
+            const totalItem = valor * quantidade;
+            totaisPorItem[index - 1] = totalItem;
+            resultadoElem.textContent = `Total: R$ ${totalItem.toFixed(2)}`;
+
+            atualizarTotalGeral();
+        }
+
+        function atualizarTotalGeral() {
+            const totalGeral = totaisPorItem.reduce((acc, val) => acc + val, 0);
+            document.getElementById('resultadoTotal').textContent = `Total Geral: R$ ${totalGeral.toFixed(2)}`;
+        }
+
+        function calcularTotalGeral() {
+            for (let i = 1; i <= 3; i++){
+                calcularItem(i);
+            }
+            atualizarTotalGeral();
+        }
+    </script>
+</body>
+</html>
+

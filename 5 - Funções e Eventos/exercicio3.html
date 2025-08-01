@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 - Mudança de Cor</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        td{
+            border: 1px solid #ddd;
+            padding: 15px;
+            vertical-align: top;
+            width: 50%;
+        }
+        th{
+            border: 1px solid #ddd;
+            padding: 15px;
+            vertical-align: top;
+            width: 50%;
+        }
+        p{
+            margin: 0;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .caixa-cor{
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #vermelho { background-color: red; }
+        #azul { background-color: blue; }
+        #verde { background-color: green; }
+        #amarelo { background-color: yellow; }
+        
+    </style>
+</head>
+<body>
+   
+    <table>
+        <thead>
+            <tr>
+                <th>
+                <div>
+                    <h4>Opçoes de cores</h4>
+                    <div id="vermelho" class="caixa-cor"></div>
+                    <div id="azul" class="caixa-cor"></div>
+                    <div id="verde" class="caixa-cor"></div>
+                    <div id="amarelo" class="caixa-cor"></div>
+                 </div>
+                 </th>
+                 <th></th>
+            </tr>
+        </thead>
+        <tr>
+            <td>
+                <p id="paragrafo1" onmouseover="mudarCor(this, 'red')" onmouseout="mudarCor(this, '')">
+                    1- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vellt euismod in pellentesque massa placerat duis ultricies lacus sed.
+                </p>
+            </td>
+            <td>
+                <p id="paragrafo2" onmouseover="mudarCor(this, 'blue')" onmouseout="mudarCor(this, '')">
+                    2 - Orci ac auctor auque mauris auque. Habitant morbi tristique senectus et netus. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Lacus luctus accumsan tortor posuere ac. Curabitur vitae nunc sed velit. Amet nisl purus in mollis nunc. Arcu dui vivamus arcu felis bibendum ut.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="paragrafo3" onmouseover="mudarCor(this, 'green')" onmouseout="mudarCor(this, '')">
+                    3 - Sed felis eget velit aliquet sagittis id consectetur. Venenatis tellus in metus vulputate eu scelerisque felis. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Et ligula ullamcorper malesuada proin libero.
+                </p>
+            </td>
+            <td>
+                <p id="paragrafo4" onmouseover="mudarCor(this, 'yellow')" onmouseout="mudarCor(this, '')">
+                    4 - Nibh venenatis cras sed felis eget. Diam ut venenatis tellus in metus vulputate eu scelerisque felis. Cras ornare arcu dui vivamus arcu. Dignissim diam quis enim lobortis scelerisque fermentum
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function mudarCor(elemento, cor) {
+            elemento.style.backgroundColor = cor;
+        }
+    </script>
+</body>
+</html>
