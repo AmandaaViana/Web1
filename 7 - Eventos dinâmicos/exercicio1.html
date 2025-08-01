@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execicio 1</title>
+</head>
+<body>
+    <h1>Quiz Soma Números</h1>
+    <p>
+        <input type="text" id="numero1" readonly> + <input type="text" id="numero2" readonly> = 
+        <input type="number" id="resposta">
+        <button onclick="verificarResposta()">Verificar</button>
+    </p>
+    <p id="resultado"></p>
+
+<script>
+        let num1, num2;
+
+        function gerarNumeros() {
+            num1 = Math.floor(Math.random() * 10); // Gera um número entre 0 e 9
+            num2 = Math.floor(Math.random() * 10); // Gera um número entre 0 e 9
+            document.getElementById("numero1").value = num1;  // Ajuste aqui
+            document.getElementById("numero2").value = num2;  // Ajuste aqui
+            document.getElementById("resultado").innerText = "";
+        }
+
+        function verificarResposta() {
+            const respostaUsuario = parseInt(document.getElementById("resposta").value);
+            const soma = num1 + num2;
+
+            if (respostaUsuario === soma) {
+                document.getElementById("resultado").innerText = "Parabéns!";
+            } else {
+                document.getElementById("resultado").innerText = "Errou! Tente novamente.";
+            }
+        }
+
+        window.onload = gerarNumeros; // Gera os números quando a página carregar
+    </script>
+</body>
+</html>
+

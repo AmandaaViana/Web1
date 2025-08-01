@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    }
+
+    .form-container {
+    max-width: 35%;
+    border: 1px solid green;  
+    padding: 20px;            
+    }
+</style>
+</head>
+<body>
+    <h2>Preencha o formulário:</h2>
+    
+    <div class="form-container">
+        <form onsubmit="event.preventDefault(); validarFormulario();">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <br>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf">
+            <br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <br>
+            <button type="submit">enviar</button>
+        </form>
+    </div>
+
+<script>
+        function validarFormulario() {
+            // Obter os valores dos campos
+            var nome = document.getElementById('nome').value;
+            var cpf = document.getElementById('cpf').value;
+            var email = document.getElementById('email').value;
+            var mensagem = '';
+
+            // Validar campo Nome
+            if (nome.length < 3) {
+                mensagem += 'Erro no campo Nome: deve ter no mínimo 3 caracteres.\n';
+            }
+
+            // Validar campo CPF
+            if (cpf.length !== 11) {
+                mensagem += 'Erro no campo CPF: deve ter exatamente 11 caracteres.\n';
+            }
+
+            // Validar campo Email
+            if (email.length < 4) {
+                mensagem += 'Erro no campo Email: deve ter no mínimo 4 caracteres.\n';
+            }
+
+            // Exibir resultado da validação
+            if (mensagem === '') {
+                alert('Tudo válido!');
+            } else {
+                alert(mensagem);
+            }
+        }
+    </script>
+</body>
+</html>
+

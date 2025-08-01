@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+    <style>
+        .resultado {
+            background-color: lightgreen;
+            padding: 10px;
+            margin-top: 10px;
+            display: inline-block; 
+        }
+
+        .input-container {
+            display: inline-block; 
+            margin-right: 10px; 
+        }
+
+        .total-geral {
+            background-color: lightblue;
+            padding: 10px;
+            margin-top: 10px;
+            font-weight: bold;
+            display: inline-grid;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <h1>Orçamento</h1>
+
+        <div class="item-container">
+            <div>
+                <div class="input-container">
+                    <label for="item1">Item 1:</label>
+                    <input type="text" id="item1">
+                </div>
+                <div class="input-container">
+                    <label for="valor1">Valor:</label>
+                    <input type="number" id="valor1" step="0.01" min="0" onchange="calcular()">
+                </div>
+                <div class="input-container">
+                    <label for="quantidade1">Quantidade:</label>
+                    <input type="number" id="quantidade1" min="1" onchange="calcular()">
+                </div>
+                <div class="resultado" id="resultadoItem1">Total: R$ 0.00</div>
+            </div>
+            <div>
+                <div class="input-container">
+                    <label for="item2">Item 2:</label>
+                    <input type="text" id="item2">
+                </div>
+                <div class="input-container">
+                    <label for="valor2">Valor:</label>
+                    <input type="number" id="valor2" step="0.01" min="0" onchange="calcular()">
+                </div>
+                <div class="input-container">
+                    <label for="quantidade2">Quantidade:</label>
+                    <input type="number" id="quantidade2" min="1" onchange="calcular()">
+                </div>
+                <div class="resultado" id="resultadoItem2">Total: R$ 0.00</div>
+            </div>
+            <div>
+                <div class="input-container">
+                    <label for="item3">Item 3:</label>
+                    <input type="text" id="item3">
+                </div>
+                <div class="input-container">
+                    <label for="valor3">Valor:</label>
+                    <input type="number" id="valor3" step="0.01" min="0" onchange="calcular()">
+                </div>
+                <div class="input-container">
+                    <label for="quantidade3">Quantidade:</label>
+                    <input type="number" id="quantidade3" min="1" onchange="calcular()">
+                </div>
+                <div class="resultado" id="resultadoItem3">Total: R$ 0.00</div>
+            </div>
+        </div>
+
+        <div class="total-geral" id="totalGeral">Valor total: R$ 0.00</div>
+    </div>
+
+    <script>
+        function calcular() {
+            let totalGeral = 0;
+
+            for (let i = 1; i <= 3; i++) {
+                const valor = parseFloat(document.getElementById(`valor${i}`).value) || 0;
+                const quantidade = parseInt(document.getElementById(`quantidade${i}`).value) || 0;
+                const total = valor * quantidade;
+
+                document.getElementById(`resultadoItem${i}`).textContent = `Total: R$ ${total.toFixed(2)}`;
+                totalGeral += total;
+            }
+
+            document.getElementById('totalGeral').textContent = `Valor total: R$ ${totalGeral.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
+
