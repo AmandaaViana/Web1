@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 - Formulário</title>
+    <style>
+        .container {
+            display: flex; 
+            gap: 20px; 
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            gap: 10px;
+            align-items: center;
+        }
+        .grid label {
+            justify-self: right;
+        }
+        .checkbox-group, .radio-group {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <form class="grid">
+                <label>Nome:</label>
+                <input type="text" name="nome" placeholder="Nome" required>
+
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="user@example.org" required>
+
+                <label>Password:</label>
+                <input type="password" name="password" placeholder="6 caracteres" minlength="6" required>
+
+                <div class="checkbox-group">
+                    <strong>Possui conhecimento?</strong>
+                    <label><input type="checkbox" name="conhecimento" value="js"> JavaScript</label>
+                    <label><input type="checkbox" name="conhecimento" value="html"> HTML</label>
+                    <label><input type="checkbox" name="conhecimento" value="css"> CSS</label>
+                </div>
+
+                <label>Curso:</label>
+                <select name="curso" required>
+                    <option value="">--Selecione--</option>
+                    <option value="ads">Análise e Desenvolvimento</option>
+                    <option value="fisica">Física</option>
+                    <option value="matematica">Matemática</option>
+                </select>
+
+                <div class="radio-group">
+                    <strong>Turno:</strong>
+                    <label><input type="radio" name="turno" value="tarde"> Tarde</label>
+                    <label><input type="radio" name="turno" value="noite"> Noite</label>
+                </div>
+
+                <label>Motivo matrícula:</label>
+                <textarea name="motivo" cols="40" rows="3"></textarea>
+
+                
+            </form>
+
+            <div class="opçao">
+                <p>Opções em Curso:</p>
+                <ul>
+                    <li>Análise e Desenvolvimento</li>
+                    <li>Física</li>
+                    <li>Matemática</li>
+                </ul>
+            </div>
+        </div>
+    <button>enviar</button>
+</body>
+</html>
+

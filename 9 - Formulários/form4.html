@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 - Cadastro</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            gap: 10px;
+        }
+        label {
+            justify-self: right;
+            color: #66c3b9;
+        }
+        h2{
+            text-align: center;
+            color: white;
+        }
+        button {
+            margin-top: 10px;
+            text-align: right;
+        }
+        .caixa {
+            border: 1px solid #66c3b9;
+            border-radius: 5px;
+            padding: 20px;
+            width: 50%;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top:60px;
+        }
+        .idade-telefone-group {
+            display: grid;
+            grid-template-columns: 0fr 2fr 3fr; 
+            gap: 10px; 
+        }
+        .telefone-group {
+            display: flex; 
+            gap: 10px;
+        }
+        .telefone-group input {
+            width: 100px;
+        }
+        input, select{
+            border: 2px solid #004876;
+        }
+        body{
+            background-image: url('planeta.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+    <h2>Cadastro usuário</h2>
+    <form class="grid">
+        <label>Nome:</label>
+        <input type="text" name="nome" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Nascimento:</label>
+        <input type="date" name="nascimento">
+
+        <label>País:</label>
+        <select name="pais">
+            <option value="">Selecione</option>
+            <option value="br">Brasil</option>
+            <option value="ar">Argentina</option>
+        </select>
+
+        <label>Idade:</label>
+        <div class="idade-telefone-group"> 
+            <input type="number" name="idade" min="0">
+            <div class="telefone-group">
+                <label>DDD</label>
+                <input type="text" name="ddd" maxlength="2" size="2">
+                <label>Telefone</label>
+                <input type="tel" name="telefone">
+            </div>
+        </div>
+    </form>
+<button>Adicionar</button>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 - Formulário</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            gap: 10px;
+            
+        }
+        .grid label {
+            justify-self: right;
+            color: #162b56;
+        }
+        .caixa{
+            align-items: center;
+            border: 1px solid #3e874c; 
+            padding: 20px;
+            background: #bdfebc;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="caixa">
+        <form class="grid">
+            <label>Data de nascimento:</label>
+            <input type="date" name="nascimento" required>
+
+            <label>Escolaridade:</label>
+            <select name="escolaridade">
+                <option value="fundamental">Ensino Fundamental</option>
+                <option value="medio">Ensino Médio</option>
+                <option value="superior">Ensino Superior</option>
+            </select>
+
+            <label>Situação da Escolaridade:</label>
+            <div>
+                <label><input type="radio" name="situacao" value="completo"> Completo</label>
+                <label><input type="radio" name="situacao" value="incompleto"> Incompleto</label>
+            </div>
+
+            <label>Nacionalidade:</label>
+            <select name="nacionalidade">
+                <option value="brasil">Brasil</option>
+                <option value="outro">Outra</option>
+            </select>
+
+            <label>UF onde nasceu:</label>
+            <select name="uf">
+                <option value="PR">Paraná</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="RS">Rio Grande do Sul</option>
+            </select>
+        </form>
+      <button>enviar</button>
+    </div>
+</body>
+</html>
