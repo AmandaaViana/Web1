@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 - box</title>
+
+    <style>
+        div.circulo{
+        width: 150px;
+        height: 150px;
+        border: 2px solid #5a5a5a;
+        padding: 100px;
+        margin: 50px;
+        box-sizing: border-box;
+        display: inline-block;
+        border-radius: 50%;
+        }
+        .circulo.amarelo{
+            background: #ffff6b;
+        }
+        .circulo.verde{
+            background: #adfbad;
+        }
+        .circulo.meio{
+            background: #adfbad;
+        }
+        .coluna-roxa {
+            background-color: #ddcaf8;
+            display: inline-block;
+            padding: 20px;
+            border: 10px;
+        }
+    </style>
+<body>
+    <main>
+        
+        <div class="circulo amarelo"></div>
+        <div class="coluna-roxa">
+            <div class="circulo meio"></div>
+        </div>
+        <div class="circulo amarelo"></div>
+
+        <div></div>
+
+        <div class="circulo amarelo"></div>
+        <div class="coluna-roxa">
+            <div class="circulo meio"></div>
+        </div>
+        <div class="circulo verde"></div>
+
+        <div></div>
+
+        <div class="circulo verde"></div>
+        <div class="coluna-roxa">
+        <div class="circulo meio"></div>
+        </div>
+        <div class="circulo amarelo"></div>
+    </main>
+</body>
+    
+</header>
+</html>
