@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bandeira</title>
+
+  <script>
+    let paises = [
+      "china.png",
+      "germany.png",
+      "india.png",
+    ];
+    let i = 0;
+
+    function next() {
+      i++;
+      if (i >= paises.length) {
+        i = 0;
+      }
+      document.getElementById("image").src = paises[i];
+    }
+
+    function prev() {
+      i--;
+      if (i < 0) {  
+        i = paises.length - 1;
+      }
+      document.getElementById("image").src = paises[i]; 
+    }
+  </script>
+</head>
+<body>
+  <button onclick="prev()">prev</button>
+  <button onclick="next()">next</button>
+  
+  <p></p>
+  <img id="image"
+       src=" "
+       width="400"/>
+  
+  <script>next();</script>
+</body>
+</html>
+
